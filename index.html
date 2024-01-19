@@ -36,15 +36,16 @@
         class = "d-inline-block align-top"
         src="images/website.png"
         width="30"
-        height="30">
-        Navbar
+        height="30"
+        alt="Logo">
+        Website
       </a>
       
       <button
         type="button"
+        class="navbar-toggler"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
-        class="navbar-toggler"
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation">
@@ -84,12 +85,15 @@
         <li class="nav-item dropdown">
           <a 
           class="nav-link dropdown-toggle"
+          id="navbarDropdown"
           data-bs-toggle="dropdown"
           href="/contact.html" 
           role="button"
-          aria-expanded="false">
+          aria-expanded="false"
+          aria-haspopup="true">
           Contact
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu"
+            aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/contact.html">Contact form</a></li>
               <li><a class="dropdown-item" href="/support.html">Support</a></li>
             </ul>
