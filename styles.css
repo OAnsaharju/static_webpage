@@ -1,0 +1,20 @@
+#body {
+  background: #0d0c16;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#footer a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+  margin-left: 30px;
+}
