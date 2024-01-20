@@ -31,7 +31,85 @@
     <link rel="stylesheet" href="..\styles\index.css" />
   </head>
   <body>
-    <div class="test-header">Header</div>
+    
+  <!-- Navbar -->
+  <nav class = "navbar navbar-expand-lg navbar-light bg-light">
+    <a 
+      href="#" 
+      class = "navbar-brand mb-0 h1">
+      <img 
+      class = "d-inline-block align-top"
+      src="images/website.png"
+      width="30"
+      height="30"
+      alt="Logo">
+      <span class = "title">Website</span>
+    </a>
+    
+    <button 
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class = "title2">Menu</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+
+  <div
+  class="collapse navbar-collapse"
+  id = "navbarNav">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a 
+        class="nav-link active"
+        aria-current="page"
+        href="#">
+        <span class = "title2">Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a 
+        class="nav-link active"
+        href="/about.html">
+        <span class = "title2">About us</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a 
+        class="nav-link active"
+        href="/blog.html">
+        <span class = "title2">Blog</span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a 
+        class="nav-link active dropdown-toggle"
+        href="/contact.html" 
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <span class = "title2">Customer service</span>
+        </a>
+          <ul class="dropdown-menu"
+          aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/contact.html">Contact us</a></li>
+            <li><a class="dropdown-item" href="/FAQ.html">FAQ</a></li>
+          </ul>
+      </li>
+
+    </ul>
+  </div>
+  </nav>
+  <!-- End of Navbar -->
+
     <div class="index-content-container">
       <p class="index-text">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
@@ -43,6 +121,8 @@
         dicta, est impedit vel quod soluta nihil doloribus, libero optio omnis
         veritatis tempora, voluptatem quidem? Doloribus voluptates a sed?
       </p>
+
+      
 
       <img
         class="index-image"
