@@ -28,14 +28,21 @@ body {
 }
 
 .navbar {
-  width: 65%;
+  width: 75%;
   height: 100px;
   flex-shrink: 0;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
   background: linear-gradient(180deg, #1C299D 0%, rgba(65, 81, 226, 0.41) 99.99%, rgba(217, 217, 217, 0.00) 100%);
+}
+
+.navbar a {
+  text-decoration: none;
+  margin: 0vh 4vh 0vh 1vh;
+  transition: 0.5s;
+  font-size: larger;
 }
 
 .title {
@@ -44,9 +51,36 @@ body {
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 2;
 }
 
+.navbarfont {
+  color: #FFF;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.navbar-toggler-icon {
+  background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.collapse.show{
+  background: linear-gradient(180deg, #1C299D 0%, rgba(65, 81, 226, 0.41) 99.99%, rgba(217, 217, 217, 0.00) 100%);
+}
+
+.collapse:not(.show) {
+  background: transparent;
+}
+
+.logo img {
+  height: 50px;
+  width:  50px;
+  margin: 5%;
+}
 
 .index-text {
   display: flex;
@@ -101,6 +135,20 @@ body {
 }
 
 @media all and (max-width: 630px) {
+  .navbar {
+    width: 100%;
+  }
+
+  .logo img {
+    margin: 10px;
+    height: 40px; /* Adjust height as needed */
+    width: 40px;  /* Adjust width as needed */
+  }
+
+  .title {
+    font-size: 24px; /* Adjust font size as needed */
+  }
+
   .index-image {
     max-width: 60%;
     max-height: 60%;
