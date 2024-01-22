@@ -27,6 +27,8 @@ body {
   flex-wrap: wrap;
 }
 
+/* Navbar */
+
 .navbar {
   width: 75%;
   height: 100px;
@@ -68,6 +70,15 @@ body {
 "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+}
+
 .collapse.show{
   background: linear-gradient(180deg, #1C299D 0%, rgba(65, 81, 226, 0.41) 99.99%, rgba(217, 217, 217, 0.00) 100%);
 }
@@ -81,6 +92,8 @@ body {
   width:  50px;
   margin: 5%;
 }
+
+/* Navbar end */
 
 .index-text {
   display: flex;
