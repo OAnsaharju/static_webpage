@@ -13,17 +13,18 @@
     flex-direction: column;
     min-height: 100%;
   }
-  .test-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    min-height: 10vh;
-  }
   .index-content-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .faq-image {
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 15px;
+    margin: 5vh;
     flex-wrap: wrap;
   }
   

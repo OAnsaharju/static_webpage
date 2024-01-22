@@ -13,13 +13,7 @@ body {
   flex-direction: column;
   min-height: 100%;
 }
-.test-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  min-height: 10vh;
-}
+
 .index-content-container {
   display: flex;
   justify-content: center;
