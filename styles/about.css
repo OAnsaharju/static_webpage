@@ -14,7 +14,7 @@ body {
   min-height: 100%;
 }
 
-.index-content-container {
+.about-content-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,12 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  background: linear-gradient(180deg, #1C299D 0%, rgba(65, 81, 226, 0.41) 99.99%, rgba(217, 217, 217, 0.00) 100%);
+  background: linear-gradient(
+    180deg,
+    #1C299D 0%,
+    rgba(65, 81, 226, 0.41) 99.99%,
+    rgba(217, 217, 217, 0.00) 100%
+  );
 }
 
 .navbar a {
@@ -61,11 +66,17 @@ body {
 
 .navbar-toggler-icon {
   background-image: url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"
+  );
 }
 
-.collapse.show{
-  background: linear-gradient(180deg, #1C299D 0%, rgba(65, 81, 226, 0.41) 99.99%, rgba(217, 217, 217, 0.00) 100%);
+.collapse.show {
+  background: linear-gradient(
+    180deg,
+    #1C299D 0%,
+    rgba(65, 81, 226, 0.41) 99.99%,
+    rgba(217, 217, 217, 0.00) 100%
+  );
 }
 
 .collapse:not(.show) {
@@ -74,13 +85,13 @@ body {
 
 .logo img {
   height: 50px;
-  width:  50px;
+  width: 50px;
   margin: 5%;
 }
 
 /* Navbar end */
 
-.index-text {
+.about-text {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -99,9 +110,9 @@ body {
   max-width: 526px;
   max-height: 350px;
   margin: 5vh;
-  object-fit: scale-down;
 }
-.index-image {
+
+.about-image {
   max-width: 100%;
   max-height: 100%;
   border-radius: 15px;
@@ -139,15 +150,15 @@ body {
 
   .logo img {
     margin: 10px;
-    height: 40px; /* Adjust height as needed */
-    width: 40px;  /* Adjust width as needed */
+    height: 40px;
+    width: 40px;
   }
 
   .title {
-    font-size: 24px; /* Adjust font size as needed */
+    font-size: 24px;
   }
 
-  .index-image {
+  .about-image {
     max-width: 60%;
     max-height: 60%;
     border-radius: 10px;
@@ -155,7 +166,7 @@ body {
     flex-wrap: wrap;
   }
 
-  .index-text {
+  .about-text {
     display: flex;
     justify-content: center;
     text-align: center;
