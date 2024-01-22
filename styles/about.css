@@ -117,7 +117,18 @@ body {
   max-height: 100%;
   border-radius: 15px;
   margin: 5vh;
-  flex-wrap: wrap;
+}
+
+.about-image:nth-of-type(1) {
+  background-image: url('images/kuva1.png');
+}
+
+.about-image:nth-of-type(2) {
+  background-image: url('images/kuva1.png');
+}
+
+.about-image:nth-of-type(3) {
+  background-image: url('images/kuva2.png');
 }
 
 .footer {
@@ -163,7 +174,6 @@ body {
     max-height: 60%;
     border-radius: 10px;
     margin: 5vh;
-    flex-wrap: wrap;
   }
 
   .about-text {
