@@ -104,15 +104,21 @@
     </nav>
     <!-- End of Navbar -->
 
-    <img class="faq-image" src="../images/FAQ1.png" alt="Questions" />
+    <!-- FAQ -->
 
-<!-- FAQ -->
+    <div class="faq-content-container">
+      <p class="faq-title">Frequently asked questions</p>
+
+      <img class="faq-image" 
+      src="../images/FAQ1.png" 
+      alt="Questions" />
+    </div>
+
 <section class="faq-section">
   <div class="container">
 
     <div class="accordion" id="faqAccordion">
       <div class="accordion-item">
-        <span class="accordion-header" id="faqHeading1">
           <button
             class="accordion-button collapsed"
             type="button"
@@ -121,7 +127,8 @@
             aria-expanded="false"
             aria-controls="faqCollapse1"
           >
-            Question 1
+          <span class="accordion-header">
+            Why is my order taking so long?
           </button>
         </span>
         <div
@@ -131,13 +138,12 @@
           data-bs-parent="#faqAccordion"
         >
           <span class="accordion-body">
-            Answer 1
+            Your order might be taking longer than usual due to the pandemic.
           </span>
         </div>
       </div>
 
-      <div class="accordion-item">
-        <span class="accordion-header" id="faqHeading2">
+      <div class="accordion-item" id="faqHeading2">
           <button
             class="accordion-button collapsed"
             type="button"
@@ -146,9 +152,11 @@
             aria-expanded="false"
             aria-controls="faqCollapse2"
           >
-            Question 2
-          </button>
-        </span>
+          <Question class="accordion-header">
+           How do i change my password?
+          </span>
+        </button>
+        
         <div
           id="faqCollapse2"
           class="accordion-collapse collapse"
@@ -156,18 +164,68 @@
           data-bs-parent="#faqAccordion"
         >
           <span class="accordion-body">
-            Answer 2
+            You can change your password by going to your profile settings.
           </span>
         </div>
       </div>
+
+      <div class="accordion-item" id="faqHeading3">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faqCollapse3"
+          aria-expanded="false"
+          aria-controls="faqCollapse3"
+        >
+        <Question class="accordion-header">
+          How do i get a refund?
+        </span>
+      </button>
+
+      <div
+      id="faqCollapse3"
+      class="accordion-collapse collapse"
+      aria-labelledby="faqHeading3"
+      data-bs-parent="#faqAccordion"
+    >
+      <span class="accordion-body">
+        You can get a refund by contacting our customer service.
+      </span>
+    </div>
+  </div>
+
+  <div class="accordion-item" id="faqHeading4">
+    <button
+      class="accordion-button collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#faqCollapse4"
+      aria-expanded="false"
+      aria-controls="faqCollapse4"
+    >
+    <Question class="accordion-header">
+      What is the return policy?
+    </span>
+  </button>
+
+  <div
+  id="faqCollapse4"
+  class="accordion-collapse collapse"
+  aria-labelledby="faqHeading4"
+  data-bs-parent="#faqAccordion"
+>
+  <span class="accordion-body">
+    You can return your order within 14 days of receiving it.
+  </span>
+</div>
+</div>
+
 
     </div>
   </div>
 </section>
 <!-- End of FAQ -->
-
-
-
 
 
 
