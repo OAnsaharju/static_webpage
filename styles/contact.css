@@ -226,4 +226,8 @@ body {
     object-fit: scale-down;
     font-size: x-small;
   }
+
+  .contact-text-area {
+    max-width: 60%;
+  }
 }
