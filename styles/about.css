@@ -227,3 +227,23 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   }
 }
+.about-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+  transform: scale(1.1);
+}
+.small-button {
+  /* Add any styles you want for the button */
+  background-color: #110486; /* Default button color */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.small-button:hover {
+  background-color: #5f5de6; /* Adjust the color as needed for the hover effect */
+}
