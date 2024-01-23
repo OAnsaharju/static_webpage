@@ -1,3 +1,5 @@
+/* about.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -117,6 +119,7 @@ body {
   max-width: 526px;
   max-height: 350px;
   margin: 5vh;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .about-image {
@@ -124,18 +127,27 @@ body {
   max-height: 100%;
   border-radius: 15px;
   margin: 5vh;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-.about-image:nth-of-type(1) {
-  background-image: url('images/kuva1.png');
+.about-button {
+  background-color: #1c299d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.about-image:nth-of-type(2) {
-  background-image: url('images/kuva1.png');
-}
-
-.about-image:nth-of-type(3) {
-  background-image: url('images/kuva2.png');
+.about-button:hover {
+  background-color: #2e5cff;
+  transform: scale(1.1);
 }
 
 .footer {
@@ -181,6 +193,7 @@ body {
     max-height: 60%;
     border-radius: 10px;
     margin: 5vh;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
 
   .about-text {
@@ -204,5 +217,6 @@ body {
     margin: 5vh;
     object-fit: scale-down;
     font-size: x-small;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   }
 }
