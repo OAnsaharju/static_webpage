@@ -48,6 +48,10 @@ body {
   line-height: 2;
 }
 
+.nav-link :hover {
+  color: orange;
+}
+
 .navbarfont {
   color: #fff;
   font-family: Inter, sans-serif;
@@ -55,6 +59,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 2;
+  transition: 0.5s;
 }
 
 .navbar-toggler-icon {
@@ -70,13 +75,22 @@ body {
   border: none;
 }
 
+.dropdown-item {
+  margin: 10px;
+  transition: 5ms;
+}
+
+.dropdown-menu {
+  padding-right: 15px;
+  margin: 10px;
+}
+.dropdown-menu a:hover {
+  color: rgb(226, 147, 1);
+}
+
 .collapse.show {
-  background: linear-gradient(
-    180deg,
-    #1c299d 0%,
-    rgba(65, 81, 226, 0.41) 99.99%,
-    rgba(217, 217, 217, 0) 100%
-  );
+  background: #111859;
+  transition: 0.5s;
 }
 
 .collapse:not(.show) {
@@ -89,7 +103,7 @@ body {
   margin: 5%;
 }
 
-/* Navbar end */
+/* End of Navbar */
 
 .contact-content-container {
   display: flex;
@@ -160,19 +174,27 @@ body {
 }
 
 @media all and (max-width: 630px) {
+  /* Navbar */
   .navbar {
     width: 100%;
   }
 
   .logo img {
     margin: 10px;
-    height: 40px; /* Adjust height as needed */
-    width: 40px; /* Adjust width as needed */
+    height: 40px;
+    width: 40px;
   }
 
   .title {
-    font-size: 24px; /* Adjust font size as needed */
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.2;
   }
+
+  /* End of Navbar */
 
   .index-image {
     max-width: 60%;
@@ -203,5 +225,9 @@ body {
     margin: 5vh;
     object-fit: scale-down;
     font-size: x-small;
+  }
+
+  .contact-text-area {
+    max-width: 60%;
   }
 }

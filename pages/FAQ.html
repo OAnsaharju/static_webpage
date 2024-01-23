@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name = "description" content = "FAQ page"/>
+    <meta name = "keywords" content = "School, Website, HAMK, HTML, CSS, FAQ, Frequently asked questions"/>
+    <meta name = "author" content = "Otto Ansaharju, Aku Ihamäki, Lauri Uusimäki"/>
     <title>FAQ</title>
 
     <link
@@ -31,7 +34,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="../styles/contact.css" />
+    <link rel="stylesheet" href="../styles/faq.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -100,6 +103,73 @@
       </div>
     </nav>
     <!-- End of Navbar -->
+
+    <img class="faq-image" src="../images/FAQ1.png" alt="Questions" />
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <span class="accordion-header" id="faqHeading1">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faqCollapse1"
+            aria-expanded="false"
+            aria-controls="faqCollapse1"
+          >
+            Question 1
+          </button>
+        </span>
+        <div
+          id="faqCollapse1"
+          class="accordion-collapse collapse"
+          aria-labelledby="faqHeading1"
+          data-bs-parent="#faqAccordion"
+        >
+          <span class="accordion-body">
+            Answer 1
+          </span>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <span class="accordion-header" id="faqHeading2">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faqCollapse2"
+            aria-expanded="false"
+            aria-controls="faqCollapse2"
+          >
+            Question 2
+          </button>
+        </span>
+        <div
+          id="faqCollapse2"
+          class="accordion-collapse collapse"
+          aria-labelledby="faqHeading2"
+          data-bs-parent="#faqAccordion"
+        >
+          <span class="accordion-body">
+            Answer 2
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End of FAQ -->
+
+
+
+
+
 
     <footer class="footer">
       <div class="footer-container">
