@@ -142,21 +142,6 @@ body {
   background-image: url('images/kuva2.png');
 }
 
-.small-button {
-  width: 30px;
-  height: 30px;
-  background-color: #141f74d5;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(196, 192, 192, 0.479);
-  transition: box-shadow 0.3s ease;
-}
-
-.small-button:hover {
-  box-shadow: 0 4px 8px rgba(88, 88, 88, 0.336);
-}
-
 .footer {
   margin-top: auto;
 }
@@ -234,16 +219,4 @@ body {
 .about-image:hover {
   transform: scale(1.1);
 }
-.small-button {
-  /* Add any styles you want for the button */
-  background-color: #110486; /* Default button color */
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
 
-.small-button:hover {
-  background-color: #5f5de6; /* Adjust the color as needed for the hover effect */
-}
