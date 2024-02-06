@@ -30,13 +30,13 @@
 </html>
 
 <?php
-// Check if the form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database connection parameters
-    $servername = "your_database_host";
-    $username = "your_database_username";
-    $password = "your_database_password";
-    $dbname = "your_database_name";
+    $servername = "localhost";
+    $username = "web_trtkp23_19";
+    $password = "bkMX5dh6";
+    $dbname = "users";
 
     // Create a connection to MySQL
     $conn = new mysqli($servername, $username, $password, $dbname);
