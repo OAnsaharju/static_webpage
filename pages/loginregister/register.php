@@ -1,7 +1,27 @@
+<?php
 
+@include "./config.php";
+
+if(isset($_POST['register'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = md5($_POST['password']);
+
+    $select = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
+    $result = mysqli_query($conn, $select);
+
+    if(mysqli_num_rows($result) > 0) {
+
+        $error[] = "Username already exists";
+    } else {
+        $insert = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        mysqli_query($conn, $insert);
+        header("Location: login.php");
+    }
+}
+
+?>
 
 <!DOCTYPE html>
-<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +35,19 @@
 
 <form action="" method="post">
     <h1>Register</h1>
+
+    <?php
+
+    if(isset($error)) {
+        foreach($error as $error) {
+            echo "<span class='error'>" . $error . "</span>";
+        }
+    }
+    ?>
+
+
     <input type="text" name="username" placeholder="Username" required>
     <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
     <input type="submit" name="register" value="Register" class="formbtn">
     <p> Already have an account? <a href="login.php">Login</a></p>
 
@@ -28,38 +58,3 @@
 
 </body>
 </html>
-
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection parameters
-    $servername = "localhost";
-    $username = "trtkp23_19";
-    $password = "bkMX5dh6";
-    $dbname = "users";
-
-    // Create a connection to MySQL
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Get form data
-    $username = $_POST["username"];
-    $password = password_hash($_POST["password"], PASSWORD_BCRYPT); // Hash the password for security
-
-    // Insert data into the users table
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Registration successful";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    // Close the database connection
-    $conn->close();
-}
-?>
