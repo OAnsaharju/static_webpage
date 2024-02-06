@@ -34,7 +34,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database connection parameters
     $servername = "localhost";
-    $username = "web_trtkp23_19";
+    $username = "trtkp23_19";
     $password = "bkMX5dh6";
     $dbname = "users";
 
