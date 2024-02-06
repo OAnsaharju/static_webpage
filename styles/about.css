@@ -55,10 +55,6 @@ body {
   line-height: 2;
 }
 
-.nav-link :hover {
-  color: orange;
-}
-
 .navbarfont {
   color: #fff;
   font-family: Inter, sans-serif;
@@ -69,17 +65,8 @@ body {
   transition: 0.5s;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.navbar-toggler:focus {
-  border: none;
-  box-shadow: none;
-}
-.navbar-toggler {
-  outline: none;
-  border: none;
+.nav-link :hover {
+  color: orange;
 }
 
 .dropdown-item {
@@ -95,9 +82,26 @@ body {
   color: rgb(226, 147, 1);
 }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+}
+
 .collapse.show {
-  background: #111859;
-  transition: 0.5s;
+  background: linear-gradient(
+    180deg,
+    #1c299d 0%,
+    rgba(65, 81, 226, 0.41) 99.99%,
+    rgba(217, 217, 217, 0) 100%
+  );
 }
 
 .collapse:not(.show) {
@@ -110,7 +114,7 @@ body {
   margin: 5%;
 }
 
-/* End of Navbar */
+/* Navbar end */
 
 .about-text {
   display: flex;
@@ -131,6 +135,7 @@ body {
   max-width: 526px;
   max-height: 350px;
   margin: 5vh;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .about-image {
@@ -138,7 +143,19 @@ body {
   max-height: 100%;
   border-radius: 15px;
   margin: 5vh;
-  flex-wrap: wrap;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.about-image:nth-of-type(1) {
+  background-image: url('../images/kuva1.png');
+}
+
+.about-image:nth-of-type(2) {
+  background-image: url('../images/kuva1.png');
+}
+
+.about-image:nth-of-type(3) {
+  background-image: url('../images/kuva2.png');
 }
 
 .footer {
@@ -165,7 +182,6 @@ body {
 }
 
 @media all and (max-width: 630px) {
-  /* Navbar */
   .navbar {
     width: 100%;
   }
@@ -177,22 +193,15 @@ body {
   }
 
   .title {
-    color: #fff;
-    font-family: Inter, sans-serif;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 2.2;
+    font-size: 24px;
   }
-
-  /* End of Navbar */
 
   .about-image {
     max-width: 60%;
     max-height: 60%;
     border-radius: 10px;
     margin: 5vh;
-    flex-wrap: wrap;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
 
   .about-text {
@@ -216,5 +225,14 @@ body {
     margin: 5vh;
     object-fit: scale-down;
     font-size: x-small;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   }
 }
+.about-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+  transform: scale(1.1);
+}
+
