@@ -16,7 +16,7 @@
     <input type="text" name="username" placeholder="Username" required>
     <input type="password" name="password" placeholder="Password" required>
     <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
-    <input type="submit" name="register" value="Register" class="formbtn>
+    <input type="submit" name="register" value="Register" class="formbtn">
     <p> Already have an account? <a href="login.php">Login</a></p>
 
 
