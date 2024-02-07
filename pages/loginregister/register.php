@@ -2,20 +2,29 @@
 
 @include "./config.php";
 
-if(isset($_POST['register'])) {
+if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = md5($_POST['password']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $select = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
+    $select = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($conn, $select);
 
-    if(mysqli_num_rows($result) > 0) {
+    if (!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    }
 
+    if (mysqli_num_rows($result) > 0) {
         $error[] = "Username already exists";
     } else {
         $insert = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-        mysqli_query($conn, $insert);
+        $result = mysqli_query($conn, $insert);
+
+        if (!$result) {
+            die("Insert query failed: " . mysqli_error($conn));
+        }
+
         header("Location: login.php");
+        exit();
     }
 }
 
