@@ -147,13 +147,13 @@ if (isset($_POST['register'])) {
 <div class="formcontainer">
 
 <form action="" method="post">
-    <h1>Register</h1>
+    <h1>Registration form</h1>
 
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
+    <input type="text" name="username" placeholder="Enter username" required>
+    <input type="password" name="password" placeholder="Enter password" required>
     <input type="password" name="password2" placeholder="Confirm Password" required>
     <input type="text" name="description" placeholder="Description">
-    <input type="file" name="image" accept="image/jpeg, image/png" placeholder="Profile Picture">
+    <input type="file" name="image" accept="image/jpeg, image/png" placeholder="Profile picture">
     <input type="checkbox" name="terms" required>
     <?php echo "I agree to the terms and conditions"; ?>
     <input type="submit" name="register" value="Register" class="formbtn">
