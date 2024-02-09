@@ -3,7 +3,7 @@
 
    session_start();
 
-   if(!isset($_SESSION['admin_name'])){
+   if($_SESSION['admin']){
       header('location:login_form.php');
    }
 ?>
