@@ -1,6 +1,11 @@
 <?php
-
 session_start();
+if($_SESSION['user']) {
+    header("Location: ../../index.html");
+    exit();
+} elseif($_SESSION['admin']) {
+    $error[] = "You are already logged in as an admin";
+}
 
 @include "./config.php";
 

@@ -1,60 +1,66 @@
 <?php
-
-if ($_SESSION['user']) {
+session_start();
+if($_SESSION['user']) {
     header("Location: ../../index.html");
     exit();
+} elseif($_SESSION['admin']) {
+    $error[] = "You are already logged in as an admin";
 }
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 
 @include "./config.php";
 
 if (isset($_POST['register'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $description = mysqli_real_escape_string($conn, $_POST['description']);
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+  $description = mysqli_real_escape_string($conn, $_POST['description']);
 
-if (isset($_FILES['image'])) {
-    $allowed = ['image/jpeg', 'image/png']; // Sallitut tiedostomuodot
-    $fileName = $_FILES['image']['name'];
-    $fileTmpName = $_FILES['image']['tmp_name'];
+  $allowed = ['image/jpeg', 'image/png']; // Sallitut tiedostomuodot
+  $fileName = $_FILES['image']['name'];
+  $fileType = $_FILES['image']['type'];
+  $fileTmpName = $_FILES['image']['tmp_name'];
 
-    $upload_dir = "./loginregister";
-    $upload_file = $upload_dir . basename($fileName);
+  $upload_dir = "/home/trtkp23_19/public_html/static_webpage/profilepictures/";
+  $upload_file = $upload_dir . basename($fileName);
 
-    if (in_array($fileType, $allowed)) {
-      if (move_uploaded_file($fileTmpName, $upload_file)) {
-          $image = $fileName;
-          echo "File uploaded successfully.";
-      } else {
-          $error[] = "Failed to upload image. Error: " . $_FILES['image']['error'];
-      }
+  if (in_array($fileType, $allowed)) {
+    if (move_uploaded_file($fileTmpName, $upload_file)) {
+      $image = $fileName;
+      echo "File uploaded successfully.";
+    } else {
+      $error[] = "Failed to upload image. Error: " . $_FILES['image']['error'];
+    }
   } else {
-      $error[] = "Invalid file type. Only JPEG and PNG files are allowed";
+    $error[] = "Invalid file type. Only JPEG and PNG files are allowed";
   }
-}
-    
+
+  if (empty($error)) { // Check if there are no errors before proceeding
     $select = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($conn, $select);
 
     if (!$result) {
-        die("Query failed: " . mysqli_error($conn));
+      die("Query failed: " . mysqli_error($conn));
     }
 
     if (mysqli_num_rows($result) > 0) {
-        $error[] = "Username already exists";
+      $error[] = "Username already exists";
     } elseif ($_POST['password'] != $_POST['password2']) {
-            $error[] = "Passwords do not match";
-    }
-    else {
-        $insert = "INSERT INTO users (username, password, description, image) VALUES ('$username', '$password', '$description', '$image')";
-        $result = mysqli_query($conn, $insert);
+      $error[] = "Passwords do not match";
+    } else {
+      $insert = "INSERT INTO users (username, password, description, image) VALUES ('$username', '$password', '$description', '$image')";
+      $result = mysqli_query($conn, $insert);
 
-        if (!$result) {
-            die("Insert query failed: " . mysqli_error($conn));
-        }
+      if (!$result) {
+        die("Insert query failed: " . mysqli_error($conn));
+      }
 
-        header("Location: login.php");
-        exit();
+      header("Location: login.php");
+      exit();
     }
+  }
 }
 
 ?>
