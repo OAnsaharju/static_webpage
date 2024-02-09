@@ -26,7 +26,7 @@
    <link rel="stylesheet" href="./styles/index.css">
    
    <!-- Link to admin CSS -->
-   <link rel="stylesheet" href="css/admin.css">
+   <link rel="stylesheet" href="../styles/admin.css">
 </head>
 <body>
    
