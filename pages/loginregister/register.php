@@ -1,14 +1,37 @@
 <?php
 
+if ($_SESSION['user']) {
+    header("Location: ../../index.html");
+    exit();
+}
+
 @include "./config.php";
 
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $description = mysqli_real_escape_string($conn, $_POST['description']);
-    $image = $_POST['image'];
-    
 
+if (isset($_FILES['image'])) {
+    $allowed = ['image/jpeg', 'image/png']; // Sallitut tiedostomuodot
+    $fileName = $_FILES['image']['name'];
+    $fileTmpName = $_FILES['image']['tmp_name'];
+
+    $upload_dir = "./loginregister";
+    $upload_file = $upload_dir . basename($fileName);
+
+    if (in_array($fileType, $allowed)) {
+      if (move_uploaded_file($fileTmpName, $upload_file)) {
+          $image = $fileName;
+          echo "File uploaded successfully.";
+      } else {
+          $error[] = "Failed to upload image. Error: " . $_FILES['image']['error'];
+      }
+  } else {
+      $error[] = "Invalid file type. Only JPEG and PNG files are allowed";
+  }
+}
+    
     $select = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($conn, $select);
 
@@ -146,16 +169,18 @@ if (isset($_POST['register'])) {
 
 <div class="formcontainer">
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <h1>Registration form</h1>
 
     <input type="text" name="username" placeholder="Enter username" required>
     <input type="password" name="password" placeholder="Enter password" required>
     <input type="password" name="password2" placeholder="Confirm Password" required>
-    <input type="text" name="description" placeholder="Description">
+    <input type="text" name="description" placeholder="Description of yourself">
+        <h3>Upload profile picture</h3>
     <input type="file" name="image" accept="image/jpeg, image/png" placeholder="Profile picture">
-    <input type="checkbox" name="terms" required>
-    <?php echo "I agree to the terms and conditions"; ?>
+    <label id="checkboxtext" class="checkbox" for="checkbox">
+    <input type="checkbox" name="terms" placeholder="Terms" id="checkbox" required>
+        I agree to the terms and conditions</label>
     <input type="submit" name="register" value="Register" class="formbtn">
     <p> Already have an account? <a href="login.php">Login</a></p>
 

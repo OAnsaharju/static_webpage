@@ -137,6 +137,26 @@
         margin: 3%;
         color: #333;
     }
+    
+    .formcontainer h3 {
+      font-family: Inter, sans-serif;
+      font-size: 106%;
+      text-align: left;
+      margin-left: 1%;
+      margin-top: 1%;
+      margin-bottom: auto;
+    }
+
+    .formcontainer form label{
+      font-family: Inter, sans-serif;
+      font-size: 106%;
+      display: flex; 
+      margin: 1%;
+    }
+
+    .formcontainer form input[type="checkbox"] {
+      flex: 0 0 4%;
+    }
 
     .formcontainer form input {
         width: 100%;
@@ -145,6 +165,16 @@
         border-radius: 5px;
         border: 1px solid #ccc;
     }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+  
+    .checkbox input {
+      margin-right: 5px;
+  }
 
     .formcontainer form .formbtn {
         width: 100%;
@@ -158,11 +188,20 @@
         cursor: pointer;
     }
 
-    .formcontainer form p {
-        margin-top: 5%;
-        font-size: 125%;
-        color: #333;
+    .formcontainer form .formbtn:hover {
+        color: orange;
     }
+
+    .formcontainer p{
+        margin-top: 5%;
+        font-size: 130%;
+        color: #333;
+        font-family: Inter, sans-serif;
+    }
+
+    .formcontainer a:hover {
+      color: orange;
+  }
 
     .error {
         color: red;;
