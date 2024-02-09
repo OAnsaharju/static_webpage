@@ -3,8 +3,9 @@
 
    session_start();
 
-   if($_SESSION['user']){
-      header('location:login.php');
+   if(!isset($_SESSION['admin'])) {
+      header('location:./loginregister/login.php');
+      exit();
    }
 ?>
 
