@@ -3,8 +3,8 @@
 
    session_start();
 
-   if($_SESSION['admin']){
-      header('location:login_form.php');
+   if($_SESSION['user']){
+      header('location:login.php');
    }
 ?>
 
