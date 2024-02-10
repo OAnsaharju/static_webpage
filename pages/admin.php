@@ -1,6 +1,55 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['admin_name'])){
+    header('location:login_form.php');
+    exit();
+}
+
 @include 'config.php';
 
+$query = "SELECT username, usertype, description FROM users";
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Admin Page">
+   <meta name="author" content="Admin">
+   <title>Admin Page</title>
+</head>
+<body>
+   
+<div class="container">
+   <h1>User List</h1>
+   <table border="1">
+      <tr>
+         <th>Username</th>
+         <th>User Type</th>
+         <th>Description</th>
+      </tr>
+      <?php
+      while ($row = mysqli_fetch_assoc($result)) {
+          echo "<tr>";
+          echo "<td>".$row['username']."</td>";
+          echo "<td>".$row['usertype']."</td>";
+          echo "<td>".$row['description']."</td>";
+          echo "</tr>";
+      }
+      ?>
+   </table>
+</div>
+
+</body>
+</html>
+<?php
 session_start();
 
 if(!isset($_SESSION['admin_name'])){
