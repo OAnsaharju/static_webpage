@@ -1,14 +1,50 @@
 <?php
-   @include 'config.php';
+@include 'config.php';
 
-   session_start();
+session_start();
 
-   if(!isset($_SESSION['admin'])) {
-      header('location:./loginregister/login.php');
-      exit();
-   }
+if(!isset($_SESSION['admin_name'])){
+    header('location:login_form.php');
+    exit();
+} elseif(isset($_SESSION['user'])) {
+    header("Location: ../../index.html");
+    exit();
+} elseif(isset($_SESSION['admin'])) {
+    $error[] = "You are already logged in as an admin";
+}
+
+if (isset($_POST['login'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = $_POST['password'];
+    
+    $select = "SELECT * FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $select);
+
+    if (!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    }
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_array($result);
+
+        if (password_verify($password, $row['password'])) {
+            if ($row['usertype'] == "admin") {
+                $_SESSION['admin'] = $row['username'];
+                header("Location: ./admin.php");
+                exit();
+            } elseif ($row['usertype'] == "user") {
+                $_SESSION['user'] = $row['username'];
+                header("Location: ../../index.html");
+                exit();
+            }
+        } else {
+            $error[] = "Incorrect password";
+        }
+    } else {
+        $error[] = "Username does not exist";
+    }
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +60,6 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
    <link rel="stylesheet" href="./styles/index.css">
-   
-   <!-- Link to admin CSS -->
-   <link rel="stylesheet" href="../styles/admin.css">
 </head>
 <body>
    
@@ -86,4 +119,3 @@
 
 </body>
 </html>
-
