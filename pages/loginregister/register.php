@@ -13,15 +13,15 @@ error_reporting(E_ALL);
 
 @include "./config.php";
 
-if (isset($_POST['register'])) {
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-  $description = mysqli_real_escape_string($conn, $_POST['description']);
+$uploadTempDir = __DIR__ . '/images';
+ini_set('upload_tmp_dir', $uploadTempDir);
+
+if (isset($_POST['upload'])) {
   $fileName = $_FILES['image']['name'];
   $fileTmpName = $_FILES['image']['tmp_name'];
-
-  $upload_dir = "./loginregister";
+  $upload_dir = __DIR__ . "/images/";
   $upload_file = $upload_dir . basename($fileName);
+
 
     if (move_uploaded_file($fileTmpName, $upload_file)) {
         $image = $fileName;
@@ -32,6 +32,11 @@ if (isset($_POST['register'])) {
 } else {
     $error[] = "Invalid file type. Only JPEG and PNG files are allowed";
 }
+
+if (isset($_POST['register'])) {
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+  $description = mysqli_real_escape_string($conn, $_POST['description']);
 
 
   if (empty($error)) { // Check if there are no errors before proceeding
@@ -58,6 +63,7 @@ if (isset($_POST['register'])) {
       exit();
     }
   }
+}
 
 ?>
 
@@ -178,12 +184,19 @@ if (isset($_POST['register'])) {
     <input type="password" name="password" placeholder="Enter password" required>
     <input type="password" name="password2" placeholder="Confirm Password" required>
     <input type="text" name="description" placeholder="Description of yourself">
+
         <h3>Upload profile picture</h3>
-    <input type="file" name="image" accept="image/jpeg, image/png" placeholder="Profile picture">
+
+      <input type="file" name="image" accept="image/jpeg, image/png" placeholder="Profile picture">
+      <input type="submit" name="upload" value="upload" class="formbtn">
+   
+
+
     <label id="checkboxtext" class="checkbox" for="checkbox">
     <input type="checkbox" name="terms" placeholder="Terms" id="checkbox" required>
         I agree to the terms and conditions</label>
     <input type="submit" name="register" value="Register" class="formbtn">
+
     <p> Already have an account? <a href="login.php">Login</a></p>
 
 <?php
