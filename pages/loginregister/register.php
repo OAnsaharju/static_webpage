@@ -13,30 +13,48 @@ error_reporting(E_ALL);
 
 @include "./config.php";
 
-$uploadTempDir = __DIR__ . '/images';
-ini_set('upload_tmp_dir', $uploadTempDir);
-
-if (isset($_POST['upload'])) {
-  $fileName = $_FILES['image']['name'];
-  $fileTmpName = $_FILES['image']['tmp_name'];
-  $upload_dir = __DIR__ . "/images/";
-  $upload_file = $upload_dir . basename($fileName);
-
-
-    if (move_uploaded_file($fileTmpName, $upload_file)) {
-        $image = $fileName;
-        echo "File uploaded successfully.";
-    } else {
-        $error[] = "Failed to upload image. Error: " . $_FILES['image']['error'];
-    }
-} else {
-    $error[] = "Invalid file type. Only JPEG and PNG files are allowed";
-}
-
 if (isset($_POST['register'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
   $description = mysqli_real_escape_string($conn, $_POST['description']);
+  
+  $target_dir = __DIR__ . "/images/";
+
+  $uploadOk = 1;
+  $finfo = new finfo(FILEINFO_MIME_TYPE);
+  $maxUpload = (int)(ini_get('upload_max_filesize'));
+  $mimearray=array('jpg' => 'image/jpeg',
+                  'png' => 'image/png',
+                  'gif' => 'image/gif',
+                  'txt' => 'text/plain',
+                  'pdf' => 'application/pdf',
+                  'bmp' => 'image/x-ms-bmp',
+  );
+
+  $mimeindeksi=array_search($finfo->file($_FILES['image']['tmp_name']), $mimearray, true);
+
+  if ($mimeindeksi==false){
+    $error[] = "Invalid file type";
+    $uploadOk = 0;
+  } else {
+    print "Oikea mime-tyyppi $mimeindeksi<br>";
+  }
+
+  $filename=basename($_FILES["image"]["name"]);
+  $imageFileNameWithoutExtension = strtolower(pathinfo($filename,PATHINFO_FILENAME));
+  $target_file=$target_dir.$imageFileNameWithoutExtension.".".$mimeindeksi;
+
+  if ($uploadOk == 0) {
+    $error[] = "Sorry, your file was not uploaded.";
+  } else {
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+      $image = $target_file;
+    } else {
+      $error[] = "There was an error uploading your file";
+    }
+  }
+
+
 
 
   if (empty($error)) { // Check if there are no errors before proceeding
@@ -184,14 +202,8 @@ if (isset($_POST['register'])) {
     <input type="password" name="password" placeholder="Enter password" required>
     <input type="password" name="password2" placeholder="Confirm Password" required>
     <input type="text" name="description" placeholder="Description of yourself">
-
-        <h3>Upload profile picture</h3>
-
-      <input type="file" name="image" accept="image/jpeg, image/png" placeholder="Profile picture">
-      <input type="submit" name="upload" value="upload" class="formbtn">
-   
-
-
+        <h3>Choose a profile picture</h3>
+    <input type="file" name="image" accept="image/jpeg, image/png">
     <label id="checkboxtext" class="checkbox" for="checkbox">
     <input type="checkbox" name="terms" placeholder="Terms" id="checkbox" required>
         I agree to the terms and conditions</label>
