@@ -26,11 +26,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $row['password'])) {
             if ($row['usertype'] == "admin") {
                 $_SESSION['admin'] = $row['username'];
-<<<<<<< Updated upstream
                 header("Location: ../admin.php");
-=======
-                header("Location: ./adminpage.php");
->>>>>>> Stashed changes
                 exit();
             } elseif ($row['usertype'] == "user") {
                 $_SESSION['user'] = $row['username'];

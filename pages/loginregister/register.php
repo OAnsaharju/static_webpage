@@ -18,24 +18,14 @@ if (isset($_POST['register'])) {
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
   $description = mysqli_real_escape_string($conn, $_POST['description']);
 
-  $allowed = ['image/jpeg', 'image/png']; // Sallitut tiedostomuodot
-  $fileName = $_FILES['image']['name'];
-  $fileType = $_FILES['image']['type'];
-  $fileTmpName = $_FILES['image']['tmp_name'];
-
-  $upload_dir = "/home/trtkp23_19/public_html/static_webpage/profilepictures/";
-  $upload_file = $upload_dir . basename($fileName);
-
-  if (in_array($fileType, $allowed)) {
-    if (move_uploaded_file($fileTmpName, $upload_file)) {
-      $image = $fileName;
-      echo "File uploaded successfully.";
-    } else {
-      $error[] = "Failed to upload image. Error: " . $_FILES['image']['error'];
-    }
+  if ($_FILES['image']['error'] == 0) {
+    $image = $_FILES['image']['name'];
+    $target = "images/" . basename($image);
+    move_uploaded_file($_FILES['image']['tmp_name'], $target);
   } else {
-    $error[] = "Invalid file type. Only JPEG and PNG files are allowed";
+    $image = null;
   }
+
 
   if (empty($error)) { // Check if there are no errors before proceeding
     $select = "SELECT * FROM users WHERE username = '$username'";
