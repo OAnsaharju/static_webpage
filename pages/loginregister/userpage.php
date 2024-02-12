@@ -20,7 +20,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-   <link rel="stylesheet" href="./styles/index.css">
+   <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
    
@@ -30,7 +30,7 @@
    <nav class="navbar navbar-expand-lg">
       <a href="#" class="navbar-brand mb-0 h1">
          <span class="logo">
-            <img class="d-inline-block align-top" src="./images/websitelogo.png" alt="Logo">
+            <img class="d-inline-block align-top" src="../../images/websitelogo.png" alt="Logo">
          </span>
          <span class="title">Website</span>
       </a>
@@ -57,13 +57,58 @@
       </div>
    </nav>
    <!-- End of Navbar -->
-
-   <div class="index-content-container">
-      <p class="index-text">
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam consequuntur amet, eum pariatur iusto provident, quaerat magnam eveniet dicta aut est aspernatur, dolorum perferendis dolores excepturi itaque. Maiores facere veniam, impedit aut distinctio, doloribus cumque provident, deleniti eius autem consequuntur laboriosam. Ducimus iure placeat temporibus distinctio a. Cumque excepturi quis accusantium dicta, est impedit vel quod soluta nihil doloribus, libero optio omnis veritatis tempora, voluptatem quidem? Doloribus voluptates a sed?
-      </p>
-      <img class="index-image" src="./images/indeximage.png" alt="Computer screen with some code on the monitor.">
+<div class='usertable'>
+   <div class='usertable-header'>
+  <h2>Users</h2>
    </div>
+   
+   <div class='usertable-body'>
+      <table class='table table-bordered'>
+      <thead>
+         <tr>
+            <th>username</th>
+            <th>description</th>
+            <th>images</th>
+         </tr>
+      </thead>
+      <tbody>
+         <?php
+         $query='SELECT * FROM users';
+         $query_run=mysqli_query($conn,$query);
+
+         if(mysqli_num_rows($query_run)> 0){
+            foreach ($query_run as $row){
+         ?>
+         <tr>
+            <td> <?= $row['username'] ?> </td>
+            <td> <?= $row['description'] ?> </td>
+            <<td> <?= $row['images'] ?> </td>
+         </tr>
+         <?php
+            }
+         }
+         else
+         {
+            ?>
+            <tr>
+               <td colspan="6">nothing found </td>
+            </tr>
+            <?php
+            }
+            ?>
+            <tbody>
+         </table>
+         </div>
+         
+            
+
+
+
+
+
+
+
+
 
    <!-- Footer from index.php -->
    <footer class="footer">
