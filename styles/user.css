@@ -112,35 +112,27 @@
   
   /* End of Navbar */
   
-  .index-text {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: white;
-    background: linear-gradient(
-      180deg,
-      #416c84 0%,
-      #9c359e 0.01%,
-      rgba(39, 45, 174, 0.93) 0.02%,
-      #2e905c 99.96%,
-      rgba(155, 171, 252, 0) 99.97%
-    );
-    border-radius: 15px;
-    min-height: 350px;
-    max-width: 526px;
-    max-height: 350px;
-    margin: 5vh;
-    object-fit: scale-down;
+    
+  .usertable h2{
+    font-family: Inter, sans-serif;
+    color: #fff;
+    margin: 3%;
+    font-size: 110%;
+    
   }
-  
-  .index-image {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 15px;
-    margin: 5vh;
-    flex-wrap: wrap;
-  }
+
+  .usertable td{
+    font-family: Inter, sans-serif;
+    color:#fff;
+    margin:1%;
+    font: size 90%;
+    }
+
+    .usertable tbody{
+    background:#111859;
+    }
+
+
   
   .footer {
     margin-top: auto;

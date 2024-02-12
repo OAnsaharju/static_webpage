@@ -82,7 +82,7 @@
          <tr>
             <td> <?= $row['username'] ?> </td>
             <td> <?= $row['description'] ?> </td>
-            <<td> <?= $row['images'] ?> </td>
+            <td> <?= $row['images'] ?> </td>
          </tr>
          <?php
             }
@@ -98,6 +98,7 @@
             ?>
             <tbody>
          </table>
+         </div>
          </div>
          
             
