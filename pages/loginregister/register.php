@@ -17,14 +17,12 @@ if (isset($_POST['register'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
   $description = mysqli_real_escape_string($conn, $_POST['description']);
-  $allowed = ['image/jpeg', 'image/png']; // Sallitut tiedostomuodot
   $fileName = $_FILES['image']['name'];
   $fileTmpName = $_FILES['image']['tmp_name'];
 
   $upload_dir = "./loginregister";
   $upload_file = $upload_dir . basename($fileName);
 
-  if (in_array($fileType, $allowed)) {
     if (move_uploaded_file($fileTmpName, $upload_file)) {
         $image = $fileName;
         echo "File uploaded successfully.";
@@ -60,7 +58,6 @@ if (isset($_POST['register'])) {
       exit();
     }
   }
-}
 
 ?>
 
