@@ -52,6 +52,7 @@ if (isset($_POST['register'])) {
       $image = $target_file;
     } else {
       $error[] = "There was an error uploading your file";
+      $image = "../../images/defaultavatar.png";
     }
   }
 
@@ -83,6 +84,7 @@ if (isset($_POST['register'])) {
     }
   }
 }
+
 
 ?>
 
