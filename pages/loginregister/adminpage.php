@@ -8,8 +8,8 @@
 
   $result=mysqli_query($conn, "select * from users");
   while($item=mysqli_fetch_object($result)){
-    print "<p>$item->username $item->description $item->image<a href='./removeuser.php?removed=$item->id'>Remove</a></p>";
-    print "<p>$item->username $item->description $item->image<a href='./changeuser.php?changed=$item->id'>Change</a></p>";
+    print "<p>$item->username $item->description <a href='./removeuser.php?removed=$item->id'>Remove</a><a href='./changeuser.php?changed=$item->id'>Change</a></p>";
+  
   }
   mysqli_close($conn);
  

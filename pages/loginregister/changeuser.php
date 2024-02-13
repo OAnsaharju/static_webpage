@@ -1,3 +1,13 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./changeuser.css" />
+</head>
+<body>
 <?php
 @include "./config.php";
 
@@ -32,13 +42,18 @@ if (!$item=mysqli_fetch_object($result)){
     exit;
 }
 ?>
+<h1>Change parameters and press ok to submit</h1>
 
-<form action='./updateuser.php' method='post'>
-username:<input type='text' name='username' value='<?php print $item->username;?>'><br>
-description:<input type='text' name='description' value='<?php print $item->description;?>'><br>
+    <form  action='./updateuser.php' method='post'>
+<p>username:</p><input type='text' name='username' value='<?php print $item->username;?>'><br>
+<p>description:</p><input type='text' name='description' value='<?php print $item->description;?>'><br>
+<p>id:</p><input type="text" name="id" value="<?php print $item->id ?>"><br>
 <input type='submit' name='ok' value='ok'><br>
 
 </form>
+</body>
+</html>
+
 
 <?php
 mysqli_close($conn);
