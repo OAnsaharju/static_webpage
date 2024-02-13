@@ -89,7 +89,7 @@ body {
 }
 
 .collapse.show {
-  background: #111859;
+  background: #2432b4;
   transition: 0.5s;
 }
 
@@ -106,35 +106,55 @@ body {
 /* End of Navbar */
 
 /* Content */
+table {
+  border-collapse: collapse;
+  margin: 15px;
+  max-width: 600px;
+  width: 100%;
+}
 
+td {
+  padding: 12px 15px;
+}
+
+thead {
+  background: linear-gradient(
+    180deg,
+    #1c299d 0%,
+    rgba(65, 81, 226, 0.41) 99.99%,
+    rgba(217, 217, 217, 0) 100%
+  );
+}
+
+tbody {
+  background: white;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+thead th {
+  color: white;
+  text-align: left;
+  font-weight: bold;
+  padding: 12px 15px;
+}
 .content-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 15px;
-}
-
-.content-container p {
-  color: white;
-}
-.content-container h2 {
-  color: white;
-  margin-bottom: 30px;
+  margin: 40px;
 }
 
 .content-container a {
-  margin-left: 10px;
   text-decoration: none;
-  border-radius: 7px;
-  background: white;
+  cursor: pointer;
   color: black;
-  transition: 0.5s;
-  padding: 5px;
+  transition: 0.2s;
 }
 .content-container a:hover {
-  background-color: orange;
-  color: #111859;
+  color: orange;
 }
 
 /* Footer */
