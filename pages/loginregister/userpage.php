@@ -1,6 +1,14 @@
 <?php
 
 @include 'config.php';
+session_start();
+if(isset($_SESSION['admin'])){
+}
+elseif (isset($_SESSION['user'])) {
+}
+else {
+  header ("Location: ./login.php");
+}
 
 ?>
 
@@ -30,7 +38,7 @@
         <span class="logo">
           <img
             class="d-inline-block align-top"
-            src="./images/websitelogo.png"
+            src="../../images/websitelogo.png"
             alt="Logo"
             
           />
@@ -88,13 +96,15 @@
           </li>
           
           <?php
-          session_start();
           if(isset($_SESSION['admin'])){
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./adminpage.php">
                 <span class = "navbarfont">Admin page</span>
               </a>
+              </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./logout.php">
                 <span class = "navbarfont">Logout</span>
               </a>
@@ -107,6 +117,9 @@
               <a class = "nav-link active" href = "./userpage.php">
                 <span class = "navbarfont">User page</span>
               </a>
+              </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./logout.php">
                 <span class = "navbarfont">Logout</span>
               </a>
@@ -118,7 +131,9 @@
           <a class = "nav-link active" href = "./login.php">
             <span class = "navbarfont">Login</span>
           </a>
+        </li>
         
+        <li class = "nav-item">
           <a class = "nav-link active" href = "./register.php">
             <span class = "navbarfont">Register</span>
           </a>

@@ -41,7 +41,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  margin: 0vh 4vh -1.5vh 1vh;
+  margin: 0vh 4vh 0vh 1vh;
   transition: 0.5s;
   font-size: larger;
 }

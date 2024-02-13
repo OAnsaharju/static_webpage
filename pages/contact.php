@@ -46,7 +46,7 @@
         <span class="logo">
           <img
             class="d-inline-block align-top"
-            src="./images/websitelogo.png"
+            src="../images/websitelogo.png"
             alt="Logo"
             
           />
@@ -111,6 +111,9 @@
               <a class = "nav-link active" href = "./loginregister/adminpage.php">
                 <span class = "navbarfont">Admin page</span>
               </a>
+            </li>
+
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/logout.php">
                 <span class = "navbarfont">Logout</span>
               </a>
@@ -123,6 +126,9 @@
               <a class = "nav-link active" href = "./loginregister/userpage.php">
                 <span class = "navbarfont">User page</span>
               </a>
+             </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/logout.php">
                 <span class = "navbarfont">Logout</span>
               </a>
@@ -134,15 +140,17 @@
           <a class = "nav-link active" href = "./loginregister/login.php">
             <span class = "navbarfont">Login</span>
           </a>
-        
+          </li>
+            
+            <li class = "nav-item">
           <a class = "nav-link active" href = "./loginregister/register.php">
             <span class = "navbarfont">Register</span>
           </a>
         </li>
-              </ul>
         <?php
       }
               ?>
+              </ul>
       </div>
     </nav>
     <!-- End of Navbar -->
