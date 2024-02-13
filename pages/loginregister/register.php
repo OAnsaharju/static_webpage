@@ -8,80 +8,40 @@ if($_SESSION['user']) {
     $error[] = "You are already logged in as an admin";
 }
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 
 @include "./config.php";
 
+
 if (isset($_POST['register'])) {
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-  $description = mysqli_real_escape_string($conn, $_POST['description']);
-  
-  $target_dir = __DIR__ . "/images/";
+  $username = $_POST['username'];
+  $password = $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+  $description = $_POST['description'];
 
-  $uploadOk = 1;
-  $finfo = new finfo(FILEINFO_MIME_TYPE);
-  $maxUpload = (int)(ini_get('upload_max_filesize'));
-  $mimearray=array('jpg' => 'image/jpeg',
-                  'png' => 'image/png',
-                  'gif' => 'image/gif',
-                  'txt' => 'text/plain',
-                  'pdf' => 'application/pdf',
-                  'bmp' => 'image/x-ms-bmp',
-  );
-
-  $mimeindeksi=array_search($finfo->file($_FILES['image']['tmp_name']), $mimearray, true);
-
-  if ($mimeindeksi==false){
-    $error[] = "Invalid file type";
-    $uploadOk = 0;
-  } else {
-    print "Oikea mime-tyyppi $mimeindeksi<br>";
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
   }
 
-  $filename=basename($_FILES["image"]["name"]);
-  $imageFileNameWithoutExtension = strtolower(pathinfo($filename,PATHINFO_FILENAME));
-  $target_file=$target_dir.$imageFileNameWithoutExtension.".".$mimeindeksi;
+  $select = "SELECT * FROM users WHERE username = '$username'";
+  $result = mysqli_query($conn, $select);
 
-  if ($uploadOk == 0) {
-    $error[] = "Sorry, your file was not uploaded.";
-  } else {
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-      $image = $target_file;
-    } else {
-      $error[] = "There was an error uploading your file";
-      $image = "../../images/defaultavatar.png";
-    }
+  if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
   }
 
-
-
-
-  if (empty($error)) { // Check if there are no errors before proceeding
-    $select = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $select);
+  if (mysqli_num_rows($result) > 0) {
+    $error[] = "Username already exists";
+  } elseif ($_POST['password'] != $_POST['password2']) {
+    $error[] = "Passwords do not match";
+  } else {
+    $insert = "INSERT INTO users (username, password, description) VALUES ('$username', '$password', '$description')";
+    $result = mysqli_query($conn, $insert);
 
     if (!$result) {
-      die("Query failed: " . mysqli_error($conn));
+      die("Insert query failed: " . mysqli_error($conn));
     }
 
-    if (mysqli_num_rows($result) > 0) {
-      $error[] = "Username already exists";
-    } elseif ($_POST['password'] != $_POST['password2']) {
-      $error[] = "Passwords do not match";
-    } else {
-      $insert = "INSERT INTO users (username, password, description, image) VALUES ('$username', '$password', '$description', '$image')";
-      $result = mysqli_query($conn, $insert);
-
-      if (!$result) {
-        die("Insert query failed: " . mysqli_error($conn));
-      }
-
-      header("Location: login.php");
-      exit();
-    }
+    header("Location: login.php");
+    exit();
   }
 }
 
