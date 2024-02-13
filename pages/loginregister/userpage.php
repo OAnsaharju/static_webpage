@@ -68,7 +68,6 @@
          <tr>
             <th>username</th>
             <th>description</th>
-            <th>images</th>
          </tr>
       </thead>
       <tbody>
@@ -82,7 +81,6 @@
          <tr>
             <td> <?= $row['username'] ?> </td>
             <td> <?= $row['description'] ?> </td>
-            <td> <?= $row['images'] ?> </td>
          </tr>
          <?php
             }
