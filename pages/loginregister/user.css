@@ -14,15 +14,11 @@ body {
   min-height: 100%;
 }
 
-.index-content-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
 /* Navbar */
-
 .navbar {
   width: 75%;
   height: 100px;
@@ -68,6 +64,7 @@ body {
   padding-right: 15px;
   margin: 10px;
 }
+
 .dropdown-menu a:hover {
   color: rgb(226, 147, 1);
 }
@@ -112,26 +109,59 @@ body {
 
 /* End of Navbar */
 
-
 .usertable h2 {
   font-family: Inter, sans-serif;
-  color: #ffffff; 
+  color: #fff; /* White */
   margin: 3%;
   font-size: 110%;
 }
 
+.usertable-container {
+  display: flex; /* Set to display flex */
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center content vertically */
+  background-color: #000; /* Black background */
+  color: #000000; /* White text */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.usertable-body {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scroll if needed */
+  background-color: #000;
+}
+
+.usertable table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #000;
+}
+
+.usertable th,
 .usertable td {
   font-family: Inter, sans-serif;
-  color: #222;
-  margin: 1%;
-  font-size: 90%;
+  color: #fff; /* White */
+  padding: 8px;
+  border: 1px solid #fff; /* White */
+  text-align: left;
+  background: #000;
+  
 }
 
+.usertable th {
+  background-color: #000000; /* Correct background color */
+}
 
 .usertable tbody {
-  background: #111859;
+  background-color: #000; /* Correct background color */
 }
 
+.usertable tr:nth-child(even) {
+  background-color: #111; /* Darker shade of black */
+}
 
 .footer {
   margin-top: auto;
@@ -194,12 +224,12 @@ body {
     align-items: center;
     color: white;
     background: linear-gradient(
-      180deg,
-      #416c84 0%,
-      #9c359e 0.01%,
-      rgba(39, 45, 174, 0.93) 0.02%,
-      #2e905c 99.96%,
-      rgba(155, 171, 252, 0) 99.97%
+       180deg,
+       #416c84 0%,
+       #9c359e 0.01%,
+       rgba(39, 45, 174, 0.93) 0.02%,
+       #2e905c 99.96%,
+       rgba(155, 171, 252, 0) 99.97%
     );
     border-radius: 15px;
     min-height: 193px;
