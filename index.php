@@ -108,7 +108,7 @@
               <a class = "nav-link active" href = "pages/admin/admin.php">
                 <span class = "navbarfontlogin">Admin page</span>
               </a>
-              <a class = "nav-link active" href = "pages/loginregister/logout.php">
+              <a class = "nav-link active" href = <?php session_destroy() ?>>
                 <span class = "navbarfontlogin">Logout</span>
               </a>
             </li>
@@ -120,7 +120,7 @@
               <a class = "nav-link active" href = "pages/loginregister/userpage.php">
                 <span class = "navbarfontlogin">User page</span>
               </a>
-              <a class = "nav-link active" href = "pages/loginregister/logout.php">
+              <a class = "nav-link active" href = <?php session_destroy() ?>>
                 <span class = "navbarfontlogin">Logout</span>
               </a>
             </li>
