@@ -2,7 +2,7 @@
 
 session_start();
 if($_SESSION['user']) {
-    header("Location: ../../index.html");
+    header("Location: ../../#");
     exit();
 } elseif($_SESSION['admin']) {
     $error[] = "You are already logged in as an admin";

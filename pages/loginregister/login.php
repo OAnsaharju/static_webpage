@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['user']) {
-    header("Location: ../../index.html");
+    header("Location: ../../#");
     exit();
 } elseif($_SESSION['admin']) {
     $error[] = "You are already logged in as an admin";
@@ -25,12 +25,12 @@ if (isset($_POST['login'])) {
 
         if (password_verify($password, $row['password'])) {
             if ($row['usertype'] == "admin") {
-                $_SESSION['admin'] = $row['username'];
-                header("Location: ../admin.php");
+                $_SESSION['admin'] == 2;
+                header("Location: ../../#");
                 exit();
             } elseif ($row['usertype'] == "user") {
                 $_SESSION['user'] = $row['username'];
-                header("Location: ../../index.html");
+                header("Location: ../../#");
                 exit();
             }
         } else {

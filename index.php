@@ -76,7 +76,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="pages/about.html">
+            <a class="nav-link active" href="pages/about.php">
               <span class="navbarfont">About</span>
             </a>
           </li>
@@ -105,10 +105,10 @@
           if(isset($_SESSION['admin'])){
             ?>
             <li class = "nav-item">
-              <a class = "nav-link active" href = "pages/admin/admin.php">
+              <a class = "nav-link active" href = "pages/loginregister/adminpage.php">
                 <span class = "navbarfontlogin">Admin page</span>
               </a>
-              <a class = "nav-link active" href = <?php session_destroy() ?>>
+              <a class = "nav-link active" href = "pages/loginregister/logout.php">
                 <span class = "navbarfontlogin">Logout</span>
               </a>
             </li>
@@ -120,12 +120,11 @@
               <a class = "nav-link active" href = "pages/loginregister/userpage.php">
                 <span class = "navbarfontlogin">User page</span>
               </a>
-              <a class = "nav-link active" href = <?php session_destroy() ?>>
+              <a class = "nav-link active" href = "pages/loginregister/logout.php">
                 <span class = "navbarfontlogin">Logout</span>
               </a>
             </li>
               <?php
-              session_destroy();
           } else {
                 ?>
                 <li class = "nav-item">
