@@ -1,3 +1,14 @@
+<?php  
+ session_start();
+ if(!isset($_SESSION['admin'])){
+ }
+ else {
+   header ("Location: ./login.php");
+ }
+
+ @include "./config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -115,27 +126,35 @@
 
     <!-- Content -->
 <div class="content-container">
-  <?php
- session_start();
-if(isset($_SESSION['admin'])){
-}
-else {
-  header ("Location: ./login.php");
-}
-
- @include "./config.php";
-
-  print "<h2>List of registered users</h2>";
-  
-
-  $result=mysqli_query($conn, "select * from users");
-  while($item=mysqli_fetch_object($result)){
-    print "<p>$item->username $item->description <a href='./removeuser.php?removed=$item->id'>Remove</a><a href='./changeuser.php?changed=$item->id'>Change</a></p>";
-  
-  }
-  mysqli_close($conn);
- 
-  ?>
+<h2>Users</h2>
+<table class="content-table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Description</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+           <?php
+            $result=mysqli_query($conn, "select * from users");
+            while($item=mysqli_fetch_object($result)){
+              print "<tr><td>$item->username </td> 
+                    <td>$item->description </td> 
+                    <td><a href='./removeuser.php?removed=$item->id'>Remove</a>
+                    <a href='./changeuser.php?changed=$item->id'>Change</a></td>
+                    </tr>
+                    ";
+            
+            }
+            mysqli_close($conn);
+          
+            ?>
+        
+      
+    </tbody>
+  </table>
 </div>
 
 
