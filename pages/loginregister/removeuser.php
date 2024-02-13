@@ -8,7 +8,7 @@ $id=isset($_POST["id"]) ? $_POST["id"] : 0;
 
 
 try{$conn;}
-catch(Exeption $e){
+catch(Exception $e){
     header("./connectionerror.html");
     exit;
 }

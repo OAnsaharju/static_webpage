@@ -1,4 +1,9 @@
 <?php
+if(!isset($_SESSION["admin"])) {
+    header("Location:./login.php");
+    exit;
+}
+
 @include "./config.php";
 
 $username=isset($_POST["username"]) ? $_POST["username"] : "";
@@ -14,7 +19,7 @@ mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 try {
     $conn;
-} catch (Exeption $e) {
+} catch (Exception $e) {
     header("Location:./connectionerror.html");
 }
 
