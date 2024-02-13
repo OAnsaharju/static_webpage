@@ -103,6 +103,12 @@ body {
   margin: 5%;
 }
 
+@media all and (max-width: 1250px) {
+  .navbar {
+    width: 100%;
+  }
+}
+
 /* End of Navbar */
 
 .contact-content-container {
@@ -175,9 +181,6 @@ body {
 
 @media all and (max-width: 630px) {
   /* Navbar */
-  .navbar {
-    width: 100%;
-  }
 
   .logo img {
     margin: 10px;

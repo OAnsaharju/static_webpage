@@ -106,10 +106,10 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "pages/loginregister/adminpage.php">
-                <span class = "navbarfontlogin">Admin page</span>
+                <span class = "navbarfont">Admin page</span>
               </a>
               <a class = "nav-link active" href = "pages/loginregister/logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
       <?php
@@ -118,10 +118,10 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "pages/loginregister/userpage.php">
-                <span class = "navbarfontlogin">User page</span>
+                <span class = "navbarfont">User page</span>
               </a>
               <a class = "nav-link active" href = "pages/loginregister/logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
               <?php
@@ -129,17 +129,19 @@
                 ?>
                 <li class = "nav-item">
           <a class = "nav-link active" href = "pages/loginregister/login.php">
-            <span class = "navbarfontlogin">Login</span>
-          </a>
-        
-          <a class = "nav-link active" href = "pages/loginregister/register.php">
-            <span class = "navbarfontlogin">Register</span>
+            <span class = "navbarfont">Login</span>
           </a>
         </li>
-              </ul>
+        
+        <li class = "nav-item">
+          <a class = "nav-link active" href = "pages/loginregister/register.php">
+            <span class = "navbarfont">Register</span>
+          </a>
+        </li>
         <?php
       }
               ?>
+        </ul>
       </div>
     </nav>
     <!-- End of Navbar -->

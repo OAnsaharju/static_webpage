@@ -41,7 +41,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  margin: 0vh 4vh 0vh 1vh;
+  margin: 0vh 4vh -1.5vh 1vh;
   transition: 0.5s;
   font-size: larger;
 }
@@ -110,14 +110,13 @@ body {
   margin: 5%;
 }
 
-.navbarfontlogin {
-  color: #fff;
-  font-family: Inter, sans-serif;
-  font-size: 14px;
-  transition: 0.5s;
-  text-align: center;
-  
+@media all and (max-width: 1250px) {
+  /* Navbar */
+  .navbar {
+    width: 100%;
+  }
 }
+
 /* End of Navbar */
 
 .index-text {
@@ -175,9 +174,6 @@ body {
 
 @media all and (max-width: 630px) {
   /* Navbar */
-  .navbar {
-    width: 100%;
-  }
 
   .logo img {
     margin: 10px;

@@ -114,6 +114,13 @@ body {
   margin: 5%;
 }
 
+@media all and (max-width: 1250px) {
+  /* Navbar */
+  .navbar {
+    width: 100%;
+  }
+}
+
 /* Navbar end */
 
 .about-text {
@@ -182,9 +189,6 @@ body {
 }
 
 @media all and (max-width: 630px) {
-  .navbar {
-    width: 100%;
-  }
 
   .logo img {
     margin: 10px;
