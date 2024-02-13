@@ -76,7 +76,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="pages/about.html">
+            <a class="nav-link active" href="pages/about.php">
               <span class="navbarfont">About</span>
             </a>
           </li>
@@ -92,11 +92,11 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="pages/contact.html"
+                <a class="dropdown-item" href="pages/contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="pages/FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="pages/FAQ.php">FAQ</a></li>
             </ul>
           </li>
           
@@ -105,7 +105,7 @@
           if(isset($_SESSION['admin'])){
             ?>
             <li class = "nav-item">
-              <a class = "nav-link active" href = "pages/admin/admin.php">
+              <a class = "nav-link active" href = "pages/loginregister/adminpage.php">
                 <span class = "navbarfontlogin">Admin page</span>
               </a>
               <a class = "nav-link active" href = "pages/loginregister/logout.php">
@@ -125,7 +125,6 @@
               </a>
             </li>
               <?php
-              session_destroy();
           } else {
                 ?>
                 <li class = "nav-item">

@@ -2,7 +2,7 @@
 
 session_start();
 if($_SESSION['user']) {
-    header("Location: ../../index.html");
+    header("Location: ../../#");
     exit();
 } elseif($_SESSION['admin']) {
     $error[] = "You are already logged in as an admin";
@@ -127,7 +127,7 @@ if (isset($_POST['register'])) {
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="../about.html">
+            <a class="nav-link active" href="../about.php">
               <span class="navbarfont">About</span>
             </a>
           </li>
@@ -143,11 +143,11 @@ if (isset($_POST['register'])) {
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="../contact.html"
+                <a class="dropdown-item" href="../contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="../FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="../FAQ.php">FAQ</a></li>
             </ul>
           </li>
         </ul>
@@ -165,8 +165,6 @@ if (isset($_POST['register'])) {
     <input type="password" name="password" placeholder="Enter password" required>
     <input type="password" name="password2" placeholder="Confirm Password" required>
     <input type="text" name="description" placeholder="Description of yourself">
-        <h3>Choose a profile picture</h3>
-    <input type="file" name="image" accept="image/jpeg, image/png">
     <label id="checkboxtext" class="checkbox" for="checkbox">
     <input type="checkbox" name="terms" placeholder="Terms" id="checkbox" required>
         I agree to the terms and conditions</label>
