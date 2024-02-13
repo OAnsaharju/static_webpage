@@ -99,8 +99,36 @@
               <li><a class="dropdown-item" href="pages/FAQ.html">FAQ</a></li>
             </ul>
           </li>
-
-        <li class = "nav-item">
+          
+          <?php
+          session_start();
+          if(isset($_SESSION['admin'])){
+            ?>
+            <li class = "nav-item">
+              <a class = "nav-link active" href = "pages/admin/admin.php">
+                <span class = "navbarfontlogin">Admin page</span>
+              </a>
+              <a class = "nav-link active" href = "pages/loginregister/logout.php">
+                <span class = "navbarfontlogin">Logout</span>
+              </a>
+            </li>
+      <?php
+          }
+          elseif(isset($_SESSION['user'])){
+            ?>
+            <li class = "nav-item">
+              <a class = "nav-link active" href = "pages/loginregister/userpage.php">
+                <span class = "navbarfontlogin">User page</span>
+              </a>
+              <a class = "nav-link active" href = "pages/loginregister/logout.php">
+                <span class = "navbarfontlogin">Logout</span>
+              </a>
+            </li>
+              <?php
+              session_destroy();
+          } else {
+                ?>
+                <li class = "nav-item">
           <a class = "nav-link active" href = "pages/loginregister/login.php">
             <span class = "navbarfontlogin">Login</span>
           </a>
@@ -109,10 +137,10 @@
             <span class = "navbarfontlogin">Register</span>
           </a>
         </li>
-      </ul>
-
-
-
+              </ul>
+        <?php
+      }
+              ?>
       </div>
     </nav>
     <!-- End of Navbar -->
