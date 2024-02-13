@@ -42,12 +42,13 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-      <a href="../#" class="navbar-brand mb-0 h1">
+      <a href="#" class="navbar-brand mb-0 h1">
         <span class="logo">
           <img
             class="d-inline-block align-top"
-            src="../images/websitelogo.png"
+            src="./images/websitelogo.png"
             alt="Logo"
+            
           />
         </span>
         <span class="title">Website</span>
@@ -78,7 +79,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="../pages/about.html">
+            <a class="nav-link active" href="./about.php">
               <span class="navbarfont">About</span>
             </a>
           </li>
@@ -94,18 +95,58 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="../pages/contact.html"
+                <a class="dropdown-item" href="./contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="../pages/FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="./FAQ.php">FAQ</a></li>
             </ul>
           </li>
-        </ul>
+          
+          <?php
+          session_start();
+          if(isset($_SESSION['admin'])){
+            ?>
+            <li class = "nav-item">
+              <a class = "nav-link active" href = "./loginregister/adminpage.php">
+                <span class = "navbarfontlogin">Admin page</span>
+              </a>
+              <a class = "nav-link active" href = "./loginregister/logout.php">
+                <span class = "navbarfontlogin">Logout</span>
+              </a>
+            </li>
+      <?php
+          }
+          elseif(isset($_SESSION['user'])){
+            ?>
+            <li class = "nav-item">
+              <a class = "nav-link active" href = "./loginregister/userpage.php">
+                <span class = "navbarfontlogin">User page</span>
+              </a>
+              <a class = "nav-link active" href = "./loginregister/logout.php">
+                <span class = "navbarfontlogin">Logout</span>
+              </a>
+            </li>
+              <?php
+          } else {
+                ?>
+                <li class = "nav-item">
+          <a class = "nav-link active" href = "./loginregister/login.php">
+            <span class = "navbarfontlogin">Login</span>
+          </a>
+        
+          <a class = "nav-link active" href = "./loginregister/register.php">
+            <span class = "navbarfontlogin">Register</span>
+          </a>
+        </li>
+              </ul>
+        <?php
+      }
+              ?>
       </div>
     </nav>
     <!-- End of Navbar -->
-
+    
     <div class="contact-content-container">
       <form class="contact-form">
         <h3 class="contact-h3">Contact us via Email!</h3>

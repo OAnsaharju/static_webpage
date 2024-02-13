@@ -121,7 +121,7 @@ if (isset($_POST['login'])) {
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="../about.html">
+            <a class="nav-link active" href="../about.php">
               <span class="navbarfont">About</span>
             </a>
           </li>
@@ -137,11 +137,11 @@ if (isset($_POST['login'])) {
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="../contact.html"
+                <a class="dropdown-item" href="../contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="../FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="../FAQ.php">FAQ</a></li>
             </ul>
           </li>
         </ul>

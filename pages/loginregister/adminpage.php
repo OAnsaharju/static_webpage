@@ -34,12 +34,13 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./adminpage.css" />
+    <link rel="stylesheet" href="../../styles/adminpage.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-      <a href="#" class="navbar-brand mb-0 h1">
+
+       <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg">
+      <a href="../../#" class="navbar-brand mb-0 h1">
         <span class="logo">
           <img
             class="d-inline-block align-top"
@@ -70,13 +71,13 @@
       >
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="../../#">
               <span class="navbarfont">Home</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="pages/about.html">
+            <a class="nav-link active" href="../about.php">
               <span class="navbarfont">About</span>
             </a>
           </li>
@@ -92,22 +93,31 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="pages/contact.html"
+                <a class="dropdown-item" href="../contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="pages/FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="../FAQ.php">FAQ</a></li>
             </ul>
           </li>
-        </ul>
+        
+            <li class = "nav-item">
+              <a class = "nav-link active" href = "../loginregister/adminpage.php">
+                <span class = "navbarfontlogin">Admin page</span>
+              </a>
+              <a class = "nav-link active" href = "../loginregister/logout.php">
+                <span class = "navbarfontlogin">Logout</span>
+              </a>
+            </li>
       </div>
     </nav>
     <!-- End of Navbar -->
+
     <!-- Content -->
 <div class="content-container">
   <?php
  session_start();
-if(!isset($_SESSION['admin'])){
+if(isset($_SESSION['admin'])){
 }
 else {
   header ("Location: ./login.php");

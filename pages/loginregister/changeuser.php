@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin'])){
+    header("Location:./login.php");
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./changeuser.css" />
+    <link rel="stylesheet" href="../../styles/changeuser.css" />
 </head>
 <body>
 <?php
@@ -22,7 +29,7 @@ if(empty($changed)){
 
 
 try{$conn;}
-catch(Exeption $e){
+catch(Exception $e){
     header("./connectionerror.html");
     exit;
 }

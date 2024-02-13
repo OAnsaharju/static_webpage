@@ -92,11 +92,11 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="pages/contact.html"
+                <a class="dropdown-item" href="pages/contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="pages/FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="pages/FAQ.php">FAQ</a></li>
             </ul>
           </li>
           

@@ -34,13 +34,14 @@
     <link rel="stylesheet" href="../styles/about.css" />
   </head>
   <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
       <a href="#" class="navbar-brand mb-0 h1">
         <span class="logo">
           <img
             class="d-inline-block align-top"
-            src="../images/websitelogo.png"
+            src="./images/websitelogo.png"
             alt="Logo"
             
           />
@@ -67,7 +68,7 @@
       >
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="../#">
               <span class="navbarfont">Home</span>
             </a>
           </li>
@@ -89,11 +90,11 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="./contact.html"
+                <a class="dropdown-item" href="./contact.php"
                   >Contact us</a
                 >
               </li>
-              <li><a class="dropdown-item" href="./FAQ.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="./FAQ.php">FAQ</a></li>
             </ul>
           </li>
           
@@ -105,7 +106,7 @@
               <a class = "nav-link active" href = "./loginregister/adminpage.php">
                 <span class = "navbarfontlogin">Admin page</span>
               </a>
-              <a class = "nav-link active" href = "">
+              <a class = "nav-link active" href = "./loginregister/logout.php">
                 <span class = "navbarfontlogin">Logout</span>
               </a>
             </li>
@@ -117,7 +118,7 @@
               <a class = "nav-link active" href = "./loginregister/userpage.php">
                 <span class = "navbarfontlogin">User page</span>
               </a>
-              <a class = "nav-link active" href = "">
+              <a class = "nav-link active" href = "./loginregister/logout.php">
                 <span class = "navbarfontlogin">Logout</span>
               </a>
             </li>
@@ -140,6 +141,7 @@
       </div>
     </nav>
     <!-- End of Navbar -->
+
     <div class="about-content-container">
       <p class="about-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
