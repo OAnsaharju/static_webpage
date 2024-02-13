@@ -115,17 +115,18 @@ body {
 
 .usertable h2 {
   font-family: Inter, sans-serif;
-  color: #222; 
+  color: #ffffff; 
   margin: 3%;
   font-size: 110%;
 }
 
 .usertable td {
   font-family: Inter, sans-serif;
-  color: #222; 
+  color: #222;
   margin: 1%;
   font-size: 90%;
 }
+
 
 .usertable tbody {
   background: #111859;
