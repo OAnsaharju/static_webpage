@@ -145,6 +145,7 @@ thead th {
   justify-content: center;
   align-items: center;
   margin: 40px;
+  flex-direction: column;
 }
 
 .content-container a {
@@ -155,6 +156,10 @@ thead th {
 }
 .content-container a:hover {
   color: orange;
+}
+
+.content-container h2 {
+  color: white;
 }
 
 /* Footer */
