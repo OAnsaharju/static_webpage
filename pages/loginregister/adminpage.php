@@ -107,8 +107,10 @@
 <div class="content-container">
   <?php
  session_start();
-if(!isset($_SESSION['user'])){
-  header("Location: ../../index.php");
+if(!isset($_SESSION['admin'])){
+}
+else {
+  header ("Location: ./login.php");
 }
 
  @include "./config.php";
