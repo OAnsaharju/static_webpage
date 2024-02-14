@@ -106,7 +106,7 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "pages/loginregister/adminpage.php">
-                <span class = "navbarfont">Admin page</span>
+                <span class = "navbarfont">Adminpage</span>
               </a>
               </li>
 

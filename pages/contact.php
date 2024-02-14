@@ -109,7 +109,7 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/adminpage.php">
-                <span class = "navbarfont">Admin page</span>
+                <span class = "navbarfont">Adminpage</span>
               </a>
             </li>
 
@@ -124,7 +124,7 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/userpage.php">
-                <span class = "navbarfont">User page</span>
+                <span class = "navbarfont">Userpage</span>
               </a>
              </li>
             
