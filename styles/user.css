@@ -139,7 +139,7 @@ body {
 }
 
 .usertable-body {
-  width: 100%;
+  width: (max width 600px);
   overflow-x: auto; /* Enable horizontal scroll if needed */
   background-color: #000;
 }
@@ -147,7 +147,12 @@ body {
 .usertable table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #000;
+
+}
+
+.usertable thead {
+background: rgba(0, 0, 0, 0.41) 99.99%
+
 }
 
 .usertable th,
