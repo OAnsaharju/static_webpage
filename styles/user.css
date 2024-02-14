@@ -120,39 +120,10 @@ body {
 /* End of Navbar */
 
 .usertable h2 {
+  color: #fff;
   font-family: Inter, sans-serif;
-  color: #fff; /* White */
-  margin: 3%;
-  font-size: 110%;
-}
-
-.usertable-container {
-  display: flex; /* Set to display flex */
-  flex-direction: column; /* Align items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center content vertically */
-  background-color: #000; /* Black background */
-  color: #000000; /* White text */
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.usertable-body {
-  width: (max width 600px);
-  overflow-x: auto; /* Enable horizontal scroll if needed */
-  background-color: #000;
-}
-
-.usertable table {
-  width: 100%;
-  border-collapse: collapse;
-
-}
-
-.usertable thead {
-background: rgba(0, 0, 0, 0.41) 99.99%
-
+  text-align: center;
+  margin-top: 3%;
 }
 
 .usertable th,
@@ -162,16 +133,26 @@ background: rgba(0, 0, 0, 0.41) 99.99%
   padding: 8px;
   border: 1px solid #fff; /* White */
   text-align: left;
-  background: rgba(65, 81, 226, 0.41) 99.99%
-  
 }
 
 .usertable th {
-  background-color: #000000; /* Correct background color */
+  background: linear-gradient(
+    180deg,
+    #1c299d 0%,
+    rgba(65, 81, 226, 0.41) 99.99%,
+    rgba(217, 217, 217, 0) 100%
+  );
 }
 
-.usertable tbody {
-  background-color: #000; /* Correct background color */
+.usertable td {
+  background-color: #fff;
+  color: #000;
+}
+
+.usertable table {
+  max-width: 630px;
+  margin: 3% auto;
+  overflow-x: auto;
 }
 
 .usertable tr:nth-child(even) {

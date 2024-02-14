@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
 
         if (password_verify($password, $row['password'])) {
             if ($row['usertype'] == "admin") {
-                $_SESSION['admin'] == 2;
+                $_SESSION['admin'] ==  $row['username'];
                 header("Location: ../../#");
                 exit();
             } elseif ($row['usertype'] == "user") {
