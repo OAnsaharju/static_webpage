@@ -121,7 +121,7 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "pages/loginregister/userpage.php">
-                <span class = "navbarfont">User page</span>
+                <span class = "navbarfont">Userpage</span>
               </a>
             </li>
 

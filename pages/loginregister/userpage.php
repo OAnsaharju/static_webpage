@@ -1,15 +1,11 @@
 <?php
+session_start();
+if(isset($_SESSION['user']) || isset($_SESSION['admin'])){
+} else {
+   header('Location: ../../#');
+}
 
 @include 'config.php';
-session_start();
-if(isset($_SESSION['admin'])){
-}
-elseif (isset($_SESSION['user'])) {
-}
-else {
-  header ("Location: ./login.php");
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +96,7 @@ else {
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./adminpage.php">
-                <span class = "navbarfont">Admin page</span>
+                <span class = "navbarfont">Admin</span>
               </a>
               </li>
             
@@ -138,10 +134,10 @@ else {
             <span class = "navbarfont">Register</span>
           </a>
         </li>
-              </ul>
         <?php
       }
               ?>
+       </ul>
       </div>
     </nav>
     <!-- End of Navbar -->
@@ -189,11 +185,6 @@ else {
          </div>
          </div>
          
-            
-
-
-
-
 
 
    <!-- Footer from index.php -->
