@@ -108,6 +108,9 @@
               <a class = "nav-link active" href = "pages/loginregister/adminpage.php">
                 <span class = "navbarfont">Admin page</span>
               </a>
+              </li>
+
+              <li class = "nav-item">
               <a class = "nav-link active" href = "pages/loginregister/logout.php">
                 <span class = "navbarfont">Logout</span>
               </a>
@@ -120,6 +123,9 @@
               <a class = "nav-link active" href = "pages/loginregister/userpage.php">
                 <span class = "navbarfont">User page</span>
               </a>
+            </li>
+
+            <li class = "nav-item">
               <a class = "nav-link active" href = "pages/loginregister/logout.php">
                 <span class = "navbarfont">Logout</span>
               </a>
