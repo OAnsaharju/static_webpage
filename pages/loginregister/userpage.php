@@ -141,8 +141,8 @@
       <table class='table table-bordered'>
       <thead>
          <tr>
-            <th>username</th>
-            <th>description</th>
+            <th>Username</th>
+            <th>Description</th>
          </tr>
       </thead>
       <tbody>
@@ -175,9 +175,6 @@
          </div>
          
             
-
-
-
 
 
 
