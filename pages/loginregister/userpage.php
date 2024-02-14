@@ -30,7 +30,7 @@ if(isset($_SESSION['user']) || isset($_SESSION['admin'])){
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
-      <a href="#" class="navbar-brand mb-0 h1">
+      <a href="../../#" class="navbar-brand mb-0 h1">
         <span class="logo">
           <img
             class="d-inline-block align-top"
@@ -61,7 +61,7 @@ if(isset($_SESSION['user']) || isset($_SESSION['admin'])){
       >
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../#">
+            <a class="nav-link active" aria-current="page" href="../../#">
               <span class="navbarfont">Home</span>
             </a>
           </li>

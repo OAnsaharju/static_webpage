@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Lisätty box-sizing */
 }
 
 html {
@@ -23,8 +22,9 @@ body {
 }
 
 /* Navbar */
+
 .navbar {
-  width: 75%;
+  width: 100%;
   height: 100px;
   flex-shrink: 0;
   margin: 0 auto;
@@ -55,7 +55,7 @@ body {
   line-height: 2;
 }
 
-.nav-link:hover { /* Oikea luokka */
+.nav-link :hover {
   color: orange;
 }
 
@@ -68,7 +68,6 @@ body {
   padding-right: 15px;
   margin: 10px;
 }
-
 .dropdown-menu a:hover {
   color: rgb(226, 147, 1);
 }
@@ -109,12 +108,6 @@ body {
   height: 50px;
   width: 50px;
   margin: 5%;
-}
-
-@media all and (max-width: 1250px) {
-  .navbar {
-    width: 100%;
-  }
 }
 
 /* End of Navbar */
