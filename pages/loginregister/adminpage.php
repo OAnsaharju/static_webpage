@@ -1,6 +1,6 @@
 <?php  
  session_start();
- if(!isset($_SESSION['admin'])){
+ if(isset($_SESSION['admin'])){
  }
  else {
    header ("Location: ./login.php");
@@ -114,10 +114,13 @@
         
             <li class = "nav-item">
               <a class = "nav-link active" href = "../loginregister/adminpage.php">
-                <span class = "navbarfontlogin">Admin page</span>
+                <span class = "navbarfont">Admin page</span>
               </a>
+            </li>
+
+            <li class = "nav-item">
               <a class = "nav-link active" href = "../loginregister/logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
       </div>

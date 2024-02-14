@@ -1,6 +1,14 @@
 <?php
 
 @include 'config.php';
+session_start();
+if(isset($_SESSION['admin'])){
+}
+elseif (isset($_SESSION['user'])) {
+}
+else {
+  header ("Location: ./login.php");
+}
 
 ?>
 
@@ -30,7 +38,7 @@
         <span class="logo">
           <img
             class="d-inline-block align-top"
-            src="./images/websitelogo.png"
+            src="../../images/websitelogo.png"
             alt="Logo"
             
           />
@@ -88,15 +96,17 @@
           </li>
           
           <?php
-          session_start();
           if(isset($_SESSION['admin'])){
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./adminpage.php">
-                <span class = "navbarfontlogin">Admin page</span>
+                <span class = "navbarfont">Admin page</span>
               </a>
+              </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
       <?php
@@ -105,10 +115,13 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./userpage.php">
-                <span class = "navbarfontlogin">User page</span>
+                <span class = "navbarfont">User page</span>
               </a>
+              </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
               <?php
@@ -116,11 +129,13 @@
                 ?>
                 <li class = "nav-item">
           <a class = "nav-link active" href = "./login.php">
-            <span class = "navbarfontlogin">Login</span>
+            <span class = "navbarfont">Login</span>
           </a>
+        </li>
         
+        <li class = "nav-item">
           <a class = "nav-link active" href = "./register.php">
-            <span class = "navbarfontlogin">Register</span>
+            <span class = "navbarfont">Register</span>
           </a>
         </li>
               </ul>

@@ -43,7 +43,7 @@
         <span class="logo">
           <img
             class="d-inline-block align-top"
-            src="./images/websitelogo.png"
+            src="../images/websitelogo.png"
             alt="Logo"
             
           />
@@ -106,10 +106,13 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/adminpage.php">
-                <span class = "navbarfontlogin">Admin page</span>
+                <span class = "navbarfont">Admin page</span>
               </a>
+              </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
       <?php
@@ -118,10 +121,13 @@
             ?>
             <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/userpage.php">
-                <span class = "navbarfontlogin">User page</span>
+                <span class = "navbarfont">User page</span>
               </a>
+              </li>
+            
+            <li class = "nav-item">
               <a class = "nav-link active" href = "./loginregister/logout.php">
-                <span class = "navbarfontlogin">Logout</span>
+                <span class = "navbarfont">Logout</span>
               </a>
             </li>
               <?php
@@ -129,11 +135,13 @@
                 ?>
                 <li class = "nav-item">
           <a class = "nav-link active" href = "./loginregister/login.php">
-            <span class = "navbarfontlogin">Login</span>
+            <span class = "navbarfont">Login</span>
           </a>
-        
+          </li>
+            
+        <li class = "nav-item">
           <a class = "nav-link active" href = "./loginregister/register.php">
-            <span class = "navbarfontlogin">Register</span>
+            <span class = "navbarfont">Register</span>
           </a>
         </li>
               </ul>

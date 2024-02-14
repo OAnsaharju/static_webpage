@@ -82,13 +82,6 @@ body {
   transition: 0.5s;
 }
 
-.navbarfontlogin {
-  color: #fff;
-  font-family: Inter, sans-serif;
-  font-size: 14px;
-  transition: 0.5s;
-}
-
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -115,6 +108,13 @@ body {
   height: 50px;
   width: 50px;
   margin: 5%;
+}
+
+@media all and (max-width: 1250px) {
+  /* Navbar */
+  .navbar {
+    width: 100%;
+  }
 }
 
 /* End of Navbar */
@@ -174,9 +174,6 @@ body {
 
 @media all and (max-width: 630px) {
   /* Navbar */
-  .navbar {
-    width: 100%;
-  }
 
   .logo img {
     margin: 10px;
