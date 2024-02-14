@@ -154,6 +154,7 @@
 
     <div class="index-content-container">
       <p class="index-text">
+
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
         consequuntur amet, eum pariatur iusto provident, quaerat magnam eveniet
         dicta aut est aspernatur, dolorum perferendis dolores excepturi itaque.
@@ -170,6 +171,11 @@
         alt="Computer screen with some code on the monitor."
       />
     </div>
+
+    <div class = "linkki">
+      <a href = "https://hameenamk-my.sharepoint.com/:w:/g/personal/aku23004_student_hamk_fi/EfeUrmegnk9OpP8fL36x-8sBmJOiaR6F84DSj-7JUwkDYg?e=Mjbtbg">Linkki ryhmän raporttiin</a>
+      </div>
+
     <footer class="footer">
       <div class="footer-container">
         <a

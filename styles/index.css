@@ -21,6 +21,15 @@ body {
   flex-wrap: wrap;
 }
 
+.linkki {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 6vh;
+}
+
 /* Navbar */
 
 .navbar {
