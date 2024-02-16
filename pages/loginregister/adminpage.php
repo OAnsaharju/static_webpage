@@ -141,7 +141,7 @@
     <tbody>
         
            <?php
-            $result=mysqli_query($conn, "select * from users");
+            $result=mysqli_query($conn, "select * from users where usertype = 'user'");
             while($item=mysqli_fetch_object($result)){
               print "<tr><td>$item->username </td> 
                     <td>$item->description </td> 
@@ -150,6 +150,15 @@
                     </tr>
                     ";
             
+            }
+            $resultadmin=mysqli_query($conn, "select * from users where usertype = 'admin'");
+            while($itemadmin=mysqli_fetch_object($resultadmin)){
+              print "<tr><td>$itemadmin->username </td> 
+                    <td>$itemadmin->description </td> 
+                    <td><a href='./changeuser.php?changed=$item->id'>Change</a></td>
+                    </tr>
+                    ";
+
             }
             mysqli_close($conn);
           
