@@ -1,6 +1,11 @@
 <?php
 @include "./config.php";
 
+session_start();
+if(!isset($_SESSION["admin"])) {
+    header("Location:./login.php");
+    exit;
+}
 
 $username=isset($_POST["username"]) ? $_POST["username"] : "";
 $description=isset($_POST["description"]) ? $_POST["description"] : "";
