@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($conn, $select);
 
     if (!$result) {
-        die("Query failed: " . mysqli_error($conn));
+      header("Location: connectionerror.html");
     }
 
     if (mysqli_num_rows($result) > 0) {

@@ -18,14 +18,14 @@ if (isset($_POST['register'])) {
   $description = $_POST['description'];
 
   if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    header("Location: connectionerror.html");
   }
 
   $select = "SELECT * FROM users WHERE username = '$username'";
   $result = mysqli_query($conn, $select);
 
   if (!$result) {
-    die("Query failed: " . mysqli_error($conn));
+    header("Location: connectionerror.html");
   }
 
   if (mysqli_num_rows($result) > 0) {
@@ -37,7 +37,7 @@ if (isset($_POST['register'])) {
     $result = mysqli_query($conn, $insert);
 
     if (!$result) {
-      die("Insert query failed: " . mysqli_error($conn));
+      header("Location: connectionerror.html");
     }
 
     header("Location: login.php");
