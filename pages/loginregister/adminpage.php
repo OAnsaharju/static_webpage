@@ -6,7 +6,7 @@
    header ("Location: ./login.php");
  }
 
- @include "./config.php";
+ @include "../../salainen/config.php";
 ?>
 
 <!DOCTYPE html>

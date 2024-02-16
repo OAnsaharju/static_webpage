@@ -5,7 +5,7 @@ if(isset($_SESSION['user']) || isset($_SESSION['admin'])){
    header('Location: ../../#');
 }
 
-@include 'config.php';
+@include "../../salainen/config.php";
 ?>
 
 <!DOCTYPE html>

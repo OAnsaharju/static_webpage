@@ -7,7 +7,7 @@ if($_SESSION['user']) {
     $error[] = "You are already logged in as an admin";
 }
 
-@include "./config.php";
+@include "../../salainen/config.php";
 
 if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);

@@ -1,5 +1,5 @@
 <?php
-@include "./config.php";
+@include "../../salainen/config.php";
 
 session_start();
 if(!isset($_SESSION["admin"])) {

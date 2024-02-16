@@ -1,0 +1,8 @@
+AuthUserFile "/home/trtkp23_19/public_html/static_webpage/salainen/.htsalasanat"
+AuthGroupFile /dev/null
+AuthName "Config"
+AuthType Basic
+
+<Limit GET POST>
+require user admin
+</Limit>

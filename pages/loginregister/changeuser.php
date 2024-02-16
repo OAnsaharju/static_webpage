@@ -16,7 +16,7 @@ if(!isset($_SESSION['admin'])){
 </head>
 <body>
 <?php
-@include "./config.php";
+@include "../../salainen/config.php";
 
 
 $changed=isset($_GET["changed"]) ? $_GET["changed"] : "";

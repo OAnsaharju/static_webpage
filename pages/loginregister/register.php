@@ -9,7 +9,7 @@ if($_SESSION['user']) {
 }
 
 
-@include "./config.php";
+@include "../../salainen/config.php";
 
 
 if (isset($_POST['register'])) {

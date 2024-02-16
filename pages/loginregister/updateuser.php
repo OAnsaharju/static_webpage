@@ -5,7 +5,7 @@ if(!isset($_SESSION["admin"])) {
     exit;
 }
 
-@include "./config.php";
+@include "../../salainen/config.php";
 
 $username=isset($_POST["username"]) ? $_POST["username"] : "";
 $description=isset($_POST["description"]) ? $_POST["description"] : "";
